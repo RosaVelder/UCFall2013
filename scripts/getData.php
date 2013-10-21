@@ -55,6 +55,7 @@ function getRequests($con) {
 	return json_encode($requestsArray)
 
 }
+//function that takes in a connection and returns a json object of all expired requests 
 function getExpiredRequests($con) {
  	$request = mysqli_query($con, "SELECT * FROM requests");
 
@@ -69,6 +70,7 @@ function getExpiredRequests($con) {
 	}
 	return json_encode($requestArray);
 }
+//function that takes in a connection and returns a json object of all non-expired requests 
 function getCurrentRequests($con) {
  	$request = mysqli_query($con, "SELECT * FROM requests");
 	
@@ -83,6 +85,7 @@ function getCurrentRequests($con) {
 	}
 	return json_encode($requestArray);
 }
+//function that takes in a connection and returns a json object of all the archived requests
 function getArchivedRequests($con){
   	$request = mysqli_query($con, "SELECT * FROM requests WHERE archived = 1");
 	
@@ -95,6 +98,7 @@ function getArchivedRequests($con){
 	}
 	return json_encode($requestArray);
 }
+//function that takes in a connection and assignment ID and returns a json object of that assignment
 function getAssignment($con, $assignID) {
 	$result = mysqli_query($con,"SELECT * FROM assignments WHERE assignmentID = $assignID");
 	$assignment = mysqli_fetch_array($result);
@@ -109,6 +113,7 @@ function getAssignments($con){
 	return json_encode($assignmnetArray);
 		
 }
+//function that takes in a connection and request ID and returns a json object of all the assignments for that one request
 function getRequestAssignments($con, $requestID) {
 	$result = mysqli_query($con,"SELECT * FROM assignments WHERE requestID = $requestID");
 	
@@ -121,6 +126,7 @@ function getRequestAssignments($con, $requestID) {
 	}
 	return json_encode($assignArray);
 }
+//function that takes in a connection and student ID and returns a json object of all the assignments for that one student
 function getStudentAssignments($con, $studentID) {
 	$result = mysqli_query($con,"SELECT * FROM assignments WHERE volunteerID = $studentID");
 	
@@ -133,6 +139,7 @@ function getStudentAssignments($con, $studentID) {
 	}
 	return json_encode($assignArray);
 }
+//function that takes in a connection and returns a json object of all expired Assignments 
 function getExpiredAssignments($con) {
 	$result = mysqli_query($con,"SELECT * FROM assignments");
 	
@@ -147,6 +154,7 @@ function getExpiredAssignments($con) {
 	}
 	return json_encode($assignArray);
 }
+//function that takes in a connection and returns a json object of all non-expired assignments
 function getCurrentAssignments($con) {
 	$result = mysqli_query($con,"SELECT * FROM assignments");
 	
@@ -161,6 +169,7 @@ function getCurrentAssignments($con) {
 	}
 	return json_encode($assignArray);
 }
+//function that takes in a connection and returns a json object of all archived assignments
 function getArchivedAssignments($con) {
 	$result = mysqli_query($con,"SELECT * FROM assignments WHERE archived = 1");
 	
