@@ -1,6 +1,7 @@
 <?php
 require 'connect.php';
 
+//adds a request into the database
 function addRequest($con, $firstName, $lastName, $street, $city, $state, $zip, $email, $phone, $category, $description) {
 	$sql ="INSERT INTO requests (firstName, lastName, street, city, state, zip, email, phone, category, description)
 				VALUES ('$firstName', '$lastName', '$street', '$city', '$state', '$zip', '$email', '$phone', '$category', '$description')";
@@ -10,6 +11,8 @@ function addRequest($con, $firstName, $lastName, $street, $city, $state, $zip, $
 	//echo "1 record added\n";
 	//echo "submit the data\n";
 }
+
+//adds a student into the database
 function addStudent($con, $firstName, $lastName, $ucID, $email, $phone, $password) {
 	$sql ="INSERT INTO volunteer (firstName, lastName, ucID, email, phone, password)
 				VALUES ('$firstName', '$lastName', '$ucID', '$email', '$phone', '$password')";
@@ -40,6 +43,8 @@ function removeAssignment($con, $assignID) {
 function archive() {
 
 }
+
+//removes a request from the database based on the request ID
 function removeRequest($con,$requestID) {
 	$request = mysquli_query($con, "DELETE FROM requests WHERE RequestID ='$requestID'");
 	return $request;
