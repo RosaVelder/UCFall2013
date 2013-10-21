@@ -1,0 +1,182 @@
+/**************Resets******************/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,
+pre,form,fieldset,input,textarea,p,blockquote,th,td,a,label{ 
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    text-decoration:none;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-size:100%;
+    font-weight:normal;
+}
+/**********************************/
+/********General Styles************/
+
+body {
+    font-size:1.25em;
+    font-family: Garamond, serif;
+    background-color:#900000;
+    height:100%;
+    background-image:url('http://unsplash.s3.amazonaws.com/batch%2011/berries.jpg');
+}
+#community {
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+}
+#contentWrapper{
+    width:50em; 
+    margin-left:auto;
+    margin-right:auto;
+}
+article{
+    max-width:50em;
+    width:40em;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:1em;
+   line-height:1.2em;
+    font-size:1.25em;
+}
+#buttonFormWrapper {
+    max-width:50em;
+    margin: 0 auto;
+}
+#formContent{
+    margin-top:2.5em;
+    width:45%;
+    float:left;
+}
+#taskBoxes{
+    margin-top:2.5em;
+    width:45%;
+    float:left;
+}
+#taskBoxes div{
+    padding:0.5em;
+    border:1px solid black;
+}
+td{
+    border:1px solid black;
+    height:3em;
+    width:8em;
+}
+#workSelection{
+    float:left;
+    width:45%;
+    padding-left:10%;
+}
+
+h1{
+    font-size:2.25em;    
+    margin-top:1em;
+}
+
+h2{
+    margin-top:2.5em;
+    font-size:1.15em;
+}
+form ol li{
+    margin-left: 2em;
+    padding-bottom: 0.5em;
+    
+}
+input{
+    border:2px solid #b0b0b0;
+    border-radius: 5px;
+    color: black;
+    width:14em;
+    margin-top:.5em;
+    height:2em;
+    padding:.25em 1em;
+    font-family: Helvetica, sans-serif;
+    font-size:.85em;
+    
+}
+#address input{
+    display:block;
+    margin-left:0em;
+    
+}
+textarea{
+    border:2px solid #b0b0b0;
+    border-radius: 5px;
+    margin:.5em 0;
+    padding:.75em;
+    font-size:1em;
+    font-family: Helvetica, sans-serif;
+    width:18em;
+}
+label{
+   display:block;
+}
+a{
+    color:#000;
+}
+textarea{
+    border-color: gray;
+}
+/**********************************/
+/********Button Styles*************/
+#community .buttons {
+    max-width:60%;
+    margin: auto;
+    text-align: center;
+    display: inline-block;
+    padding-left:2.5em
+}
+.buttons ul li{ 
+    border: 3px solid #545252;
+    border-radius:5px;
+    max-width: 100%;
+    padding:1.5em 1.5em;
+    margin: 1.5em;
+}
+/**********************************/
+/**********Tab Styles**************/
+#tabs ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #830019;
+    padding-bottom: 4.5px;
+    padding-top:1em;
+}
+#tabs ul li{
+    display: inline;
+    border: solid;
+    border-width: 0 1px 0 1px;
+    margin: 0;
+    border-radius: 0;
+    background-color: gray;
+    padding-bottom: 6px;
+    padding-left:20px;
+    padding-right:20px;   
+}   
+#community li.communityTab{
+    background-color: white;
+}
+/**********************************/
+/**********Psuedo Classes**************/
+a:visited{
+    background-color: inherit;
+}
+input:focus { 
+    outline:none;
+    border-color:#4d90fe;
+    box-shadow:0 0 10px #9ecaed;
+}
+textarea:focus { 
+    outline:none;
+    border-color:#4d90fe;
+    box-shadow:0 0 10px #9ecaed;
+}
+.buttons ul li:hover{
+    background-color:#900000;
+    color:white;
+    border: 3px solid white;
+}
+.buttons ul li:focus{
+    background-color:#900000;
+}
