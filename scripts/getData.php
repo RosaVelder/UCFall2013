@@ -1,6 +1,7 @@
 <?php
 require 'connect.php';
 
+//Returns one single student based on their Union College ID
 function getStudent($con, $UCID) {
 	
 	$student = mysqli_query($con, 
@@ -14,6 +15,7 @@ function getStudent($con, $UCID) {
 	
 }
 
+//Returns all studens in the current database.
 function getAllStudents($con) {
 	
 	$allStudents = mysqli_query($con, 
@@ -31,6 +33,7 @@ function getAllStudents($con) {
 	return json_encode($studentArray);
 }
 
+//Gets a single request from a community member based on the request ID
 function getRequest($con, $requestID) {
 		
 	$request = mysqli_query($con,
@@ -44,6 +47,7 @@ function getRequest($con, $requestID) {
     
 }
 
+//Returns all requests as a list from the database
 function getRequests($con) {
 	
 	$requests = mysqli_query($con,
@@ -104,6 +108,8 @@ function getAssignment($con, $assignID) {
 	$assignment = mysqli_fetch_array($result);
 	return json_encode($assignment);
 }
+
+//returns all assignments in the database
 function getAssignments($con){
 	$sql="SELECT * FROM assignments"
 	$result = mysqli_query($con,$sql);
