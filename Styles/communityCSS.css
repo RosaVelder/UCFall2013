@@ -126,7 +126,7 @@ textarea{
     padding: 0;
     margin: 0;
     background-color: #830019;
-    padding-bottom: 4.5px;
+    padding-bottom:.3em;
     padding-top:1em;
 }
 #tabs ul li{
@@ -140,7 +140,8 @@ textarea{
     padding-left:20px;
     padding-right:20px;   
 }   
-#community li.communityTab{
+#community li.communityTab,
+#student li.studentTab{
     background-color: white;
 }
 /**********************************/
