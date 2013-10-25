@@ -1,4 +1,4 @@
-<h1>Epic Project Title goes here</h1>
+<h1>Community Volunteer Project</h1>
 <p>This is the repository for our web app. All of the files and libraries we use are contained within.</p>
 
 <h2>The styles directory</h2>
