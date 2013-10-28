@@ -2,30 +2,43 @@
 	 $('#PersonTableContainer').jtable({
             title: 'Table of people',
             actions: {
-                listAction: '/GettingStarted/PersonList',
-                createAction: '/GettingStarted/CreatePerson',
-                updateAction: '/GettingStarted/UpdatePerson',
-                deleteAction: '/GettingStarted/DeletePerson'
+                listAction: '../scripts/volunteerActions.php?action=list',
+                createAction: '../scripts/volunteerActions.php?action=create',
+                updateAction: '../scripts/volunteerActions.php?action=update',
+                deleteAction: '../scripts/volunteerActions.php?action=delete'
             },
             fields: {
-                PersonId: {
+                volunteerID: {
                     key: true,
                     list: false
                 },
-                Name: {
-                    title: 'Author Name',
-                    width: '40%'
+                firstName: {
+                    title: 'First Name',
+                    width: '15%'
                 },
-                Age: {
-                    title: 'Age',
-                    width: '20%'
+                lastName: {
+                    title: 'Last Name',
+                    width: '15%'
                 },
-                RecordDate: {
-                    title: 'Record date',
-                    width: '30%',
-                    type: 'date',
-                    create: false,
-                    edit: false
+                ucID: {
+                    title: 'UC ID',
+                    width: '10%'
+                },
+                password: {
+                    title: 'Password',
+                    list: false
+                },
+                admin: {
+                    title: 'admin',
+                    list: false
+                },
+                email: {
+                    title: 'E-mail',
+                    width: '15%'
+                },
+                phone: {
+                    title: 'Phone',
+                    width: '15%'
                 }
             }
         });
