@@ -5,7 +5,7 @@
 <p>The styles directory contains all of the css for the html files, and without these files the project is not much to look at</p>
 
 <h2>The HTML directory</h2>
-<p>Soure code for all the web pages is located here, along with most (if not all) the javascript that is used in the project</p>
+<p>Source code for all the web pages is located here, along with most (if not all) the javascript that is used in the project</p>
 
 <h2>The Scripts directory</h2>
-<p>Souce code for all server side interactions. There is more documentation in each of the files inside the directory</p>
+<p>Source code for all server side interactions. There is more documentation in each of the files inside the directory</p>
