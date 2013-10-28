@@ -1,9 +1,9 @@
 <?php
 function connect() {
-	// Create connection
+	// Establishes a connection with MySQL Server
 	$con=mysqli_connect("localhost","webtech13","ipv6*ipv4","webtech13_database");
 
-	// Check connection
+	// Checks the connection
 	if (mysqli_connect_errno($con)){
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	} else {
