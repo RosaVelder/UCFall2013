@@ -36,10 +36,49 @@
                     title: 'E-mail',
                     width: '15%'
                 },
-                phone: {
-                    title: 'Phone',
-                    width: '15%'
-                }
+                Phones: {
+                    title: '',
+                    width: '5%',
+                    sorting: false,
+                    edit: false,
+                    create: false,
+                    display: function (studentData) {
+                        //Create an image that will be used to open child table
+                        var $img = $('<img src="jtable/phone_metro.png" title="Edit phone numbers" />');
+                        //Open child table when user clicks the image
+                        $img.click(function () {
+                            $('#StudentTableContainer').jtable('openChildTable',
+                                    $img.closest('tr'),
+                                    {
+                                        title: studentData.record.Name + ' - Phone numbers',
+                                        actions: {
+                                            listAction: '/Demo/PhoneList?StudentId=' + studentData.record.StudentId,
+                                            deleteAction: '/Demo/DeletePhone',
+                                            updateAction: '/Demo/UpdatePhone',
+                                            createAction: '/Demo/CreatePhone'
+                                        },
+                                        fields: {
+                                            volunteerId: {
+												key: true,
+												create: false,
+												edit: false,
+												list: false,
+                                                type: 'hidden',
+                                                //defaultValue: studentData.record.StudentId
+                                            },
+                                            phone: {
+                                                title: 'Phone Number',
+                                                width: '30%'
+                                            }
+                                        }
+                                    }, function (data) { //opened handler
+                                        data.childTable.jtable('load');
+                                    });
+                        });
+                        //Return image to show on the person row
+                        return $img;
+                    }
+                },
             }
         });
 </script>
