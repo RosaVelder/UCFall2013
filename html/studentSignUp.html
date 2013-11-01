@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         
         <title>Student Sign-Up</title>
-        <link href="/UCFall2013/Styles/studentSignUpCSS.css" rel="stylesheet" />
+        <link href="/UCFall2013/Styles/master.css" rel="stylesheet" />
     </head>
     
     <body id="community">
@@ -28,7 +28,12 @@
                         <ol>
                            <li><label for="fname">First Name:</label><input type="text" name="fname" placeholder="First" required autofocus></li>
                            <li><label for="lname">Last Name:</label><input type="text" name="lname" placeholder="Last" required ></li>
-                           <li class="address"><label for="dorm">Dorm: </label><input type="text" name="dorm" placeholder="Dorm name:" required >
+                           <li class="address"><label for="dorm">Dorm: </label><!--<input type="text" name="dorm" placeholder="Dorm name:" required > -->
+                               <select name="dorm">
+                               <option value="Rees">Rees</option>
+                               <option value="Prescott">Prescott</option>
+                               <option value="Culver">Culver</option>
+                               </select><br>
                                <input type="text" name="city" placeholder="Room #:" required></li>
                             <li class="address"><label for="address">Village: </label><input type="text" name="address" placeholder="Street Address" required >
                                <input type="text" name="city" placeholder="City" required>
