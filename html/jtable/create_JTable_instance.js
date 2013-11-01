@@ -33,10 +33,50 @@
                     list: false
                 },
                 email: {
-                    title: 'E-mail',
-                    width: '15%'
-                },
-                Phones: {
+                    title: '',
+                    width: '5%',
+                    sorting: false,
+                    edit: false,
+                    create: false,
+                    display: function (studentData) {
+                        //Create an image that will be used to open child table
+                        var $img = $('<img src="jtable/list_metro.png" title="Edit e-mails" />');
+                        //Open child table when user clicks the image
+                        $img.click(function () {
+                            $('#StudentTableContainer').jtable('openChildTable',
+                                    $img.closest('tr'),
+                                    {
+                                        title: studentData.record.Name + ' - Phone numbers',
+                                        actions: {
+                                            listAction: '../scripts/volunteerEmail.php?action=list&StudentId=' + studentData.record.StudentId,
+                                            deleteAction: '../scripts/volunteerEmail.php?action=Delete',
+                                            updateAction: '../scripts/volunteerEmail.php?action=Update',
+                                            createAction: '../scripts/volunteerEmail.php?action=Create'
+                                        },
+                                        fields: {
+                                            volunteerID: {
+												key: true,
+												create: false,
+												edit: false,
+												list: false,
+                                                type: 'hidden',
+                                                defaultValue: studentData.record.StudentId
+                                            },
+                                            email: {
+                                                title: 'Email',
+                                                width: '90%'
+                                            }
+                                        }
+                                    }, function (data) { //opened handler
+                                        data.childTable.jtable('load');
+                                    });
+                        });
+                        //Return image to show on the person row
+                        return $img;
+                    }
+                }
+            },
+            Phones: {
                     title: '',
                     width: '5%',
                     sorting: false,
@@ -52,23 +92,23 @@
                                     {
                                         title: studentData.record.Name + ' - Phone numbers',
                                         actions: {
-                                            listAction: '/Demo/PhoneList?StudentId=' + studentData.record.StudentId,
-                                            deleteAction: '/Demo/DeletePhone',
-                                            updateAction: '/Demo/UpdatePhone',
-                                            createAction: '/Demo/CreatePhone'
+                                            listAction: '../scripts/volunteerPhone.php?action=list&StudentId=' + studentData.record.StudentId,
+                                            deleteAction: '../scripts/volunteerPhone.php?action=DeletePhone',
+                                            updateAction: '../scripts/volunteerPhone.php?action=UpdatePhone',
+                                            createAction: '../scripts/volunteerPhone.php?action=CreatePhone'
                                         },
                                         fields: {
-                                            volunteerId: {
+                                            volunteerID: {
 												key: true,
 												create: false,
 												edit: false,
 												list: false,
                                                 type: 'hidden',
-                                                //defaultValue: studentData.record.StudentId
+                                                defaultValue: studentData.record.StudentId
                                             },
                                             phone: {
                                                 title: 'Phone Number',
-                                                width: '30%'
+                                                width: '90%'
                                             }
                                         }
                                     }, function (data) { //opened handler
@@ -78,7 +118,7 @@
                         //Return image to show on the person row
                         return $img;
                     }
-                },
+                }
             }
         });
 </script>
