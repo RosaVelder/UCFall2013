@@ -1,6 +1,6 @@
 <script type="text/javascript">
 	 $('#PersonTableContainer').jtable({
-            title: 'Table of people',
+            title: 'Table of Volunteers',
             actions: {
                 listAction: '../scripts/volunteerActions.php?action=list',
                 createAction: '../scripts/volunteerActions.php?action=create',
@@ -48,7 +48,7 @@
                                     {
                                         title: studentData.record.Name + ' - Phone numbers',
                                         actions: {
-                                            listAction: '../scripts/volunteerEmail.php?action=list&StudentId=' + studentData.record.StudentId,
+                                            listAction: '../scripts/volunteerEmail.php?action=list&StudentId=' + studentData.record.volunteerID,
                                             deleteAction: '../scripts/volunteerEmail.php?action=Delete',
                                             updateAction: '../scripts/volunteerEmail.php?action=Update',
                                             createAction: '../scripts/volunteerEmail.php?action=Create'
@@ -60,7 +60,7 @@
 												edit: false,
 												list: false,
                                                 type: 'hidden',
-                                                defaultValue: studentData.record.StudentId
+                                                defaultValue: studentData.record.volunteerID
                                             },
                                             email: {
                                                 title: 'Email',
@@ -92,7 +92,7 @@
                                     {
                                         title: studentData.record.Name + ' - Phone numbers',
                                         actions: {
-                                            listAction: '../scripts/volunteerPhone.php?action=list&StudentId=' + studentData.record.StudentId,
+                                            listAction: '../scripts/volunteerPhone.php?action=list&StudentId=' + studentData.record.volunteerID,
                                             deleteAction: '../scripts/volunteerPhone.php?action=DeletePhone',
                                             updateAction: '../scripts/volunteerPhone.php?action=UpdatePhone',
                                             createAction: '../scripts/volunteerPhone.php?action=CreatePhone'
@@ -104,7 +104,7 @@
 												edit: false,
 												list: false,
                                                 type: 'hidden',
-                                                defaultValue: studentData.record.StudentId
+                                                defaultValue: studentData.record.volunteerID
                                             },
                                             phone: {
                                                 title: 'Phone Number',
