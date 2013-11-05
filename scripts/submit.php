@@ -49,11 +49,13 @@ function removeRequest($con,$requestID) {
 	$request = mysqli_query($con, "DELETE FROM requests WHERE RequestID ='$requestID'");
 	return $request;
 }
-function archiveRequest() {
-
+//function that archives a requests
+function archiveRequest($con,$requestID) {
+	mysqli_query($con, "UPDATE requests SET archived=1 WHERE requestID=$requestID");
 }
-function unArchiveRequest() {
-
+//function that unarchives a requests
+function dearchiveRequest($con,$requestID) {
+	mysqli_query($con, "UPDATE requests SET archived=0 WHERE requestID=$requestID");
 }
 //function that updates a persons password by taking in a string and hashing it to a sha256.
 function updateStudentPassword($con, $volunteerID, $password) {
